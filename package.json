@@ -1,0 +1,45 @@
+{
+  "name": "lunchrouletter",
+  "private": true,
+  "version": "8.2.1",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "cfenv": "^1.0.4",
+    "datejs": "^1.0.0-rc3",
+    "ejs": "2.3.4",
+    "grunt": "1.0.1",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-coffee": "1.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-jst": "1.0.0",
+    "grunt-contrib-less": "1.3.0",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sails-linker": "~0.10.1",
+    "grunt-sync": "0.5.2",
+    "include-all": "^1.0.0",
+    "node-schedule": "^1.2.1",
+    "node-uuid": "^1.4.8",
+    "passport": "^0.3.2",
+    "passport-slack": "0.0.7",
+    "rc": "1.0.1",
+    "request": "^2.81.0",
+    "sails": "~0.12.11",
+    "sails-disk": "~0.10.9",
+    "sails-postgresql": "^0.11.4"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/a212472385/lunchrouletter.git"
+  },
+  "author": "a212472385",
+  "license": ""
+}

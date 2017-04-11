@@ -1,0 +1,104 @@
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+
+CREATE TABLE roulette (
+    id text NOT NULL,
+    message text,
+    day text,
+    hour text,
+    minute text,
+    team text,
+    offset int,
+    recurring text,
+    "createdAt" timestamp with time zone,
+    "updatedAt" timestamp with time zone
+);
+
+
+CREATE TABLE roulette_users__user_roulettes (
+    id integer NOT NULL,
+    roulette_users text,
+    user_roulettes text
+);
+
+CREATE SEQUENCE roulette_users__user_roulettes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE roulette_users__user_roulettes_id_seq OWNED BY roulette_users__user_roulettes.id;
+
+
+CREATE TABLE team (
+    name text,
+    id text NOT NULL,
+    webhook text,
+        token text,
+    "createdAt" timestamp with time zone,
+    "updatedAt" timestamp with time zone
+);
+
+
+CREATE TABLE "user" (
+    name text,
+    id text NOT NULL,
+    team text,
+    "createdAt" timestamp with time zone,
+    "updatedAt" timestamp with time zone
+);
+
+
+
+ALTER TABLE ONLY roulette_users__user_roulettes ALTER COLUMN id SET DEFAULT nextval('roulette_users__user_roulettes_id_seq'::regclass);
+
+
+
+
+
+
+ALTER TABLE ONLY roulette
+    ADD CONSTRAINT roulette_pkey PRIMARY KEY (id);
+
+
+
+
+
+
+ALTER TABLE ONLY roulette_users__user_roulettes
+    ADD CONSTRAINT roulette_users__user_roulettes_pkey PRIMARY KEY (id);
+
+
+
+
+
+
+ALTER TABLE ONLY team
+    ADD CONSTRAINT team_pkey PRIMARY KEY (id);
+
+
+
+
+
+
+ALTER TABLE ONLY "user"
+    ADD CONSTRAINT user_pkey PRIMARY KEY (id);
+
+
+
+

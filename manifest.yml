@@ -1,0 +1,14 @@
+---
+applications:
+  - name: lr-app
+    host: lr-app
+    buildpack: https://github.com/cloudfoundry/buildpack-nodejs.git
+    memory: 512M
+    instances: 1
+    disk_quota: 256M
+    env: 
+         NODE_ENV: production
+    command:  sails lift --port $PORT
+    services:
+       - lr-db
+       - slack-api
