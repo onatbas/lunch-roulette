@@ -8,6 +8,6 @@ applications:
     disk_quota: 256M
     env: 
          NODE_ENV: development
-    command:  sails lift --port $PORT
+    command:  npm install && sails lift --port $PORT
     services:
        - slack-api
